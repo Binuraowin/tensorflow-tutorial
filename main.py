@@ -24,3 +24,27 @@ tensor3 = tf.reshape(tensor2, [2, -1])  # -1 tells the tensor to calculate the s
 print(tensor1)
 print(tensor2)
 print(tensor3)
+
+three = tensor[0,2]  # selects the 3rd element from the 1st row
+print(three)  # -> 3
+
+row1 = tensor[0]  # selects the first row
+print(row1)
+
+column1 = tensor[:, 0]  # selects the first column
+print(column1)
+
+row_2_and_4 = tensor[1::2]  # selects second and fourth row
+print(row_2_and_4)
+
+column_1_in_row_2_and_3 = tensor[1:3, 0]
+print(column_1_in_row_2_and_3)
+
+matrix = [[1,2,3,4,5],
+          [6,7,8,9,10],
+          [11,12,13,14,15],
+          [16,17,18,19,20]]
+
+tensor = tf.Variable(matrix, dtype=tf.int32)
+print(tf.rank(tensor))
+print(tensor.shape)
